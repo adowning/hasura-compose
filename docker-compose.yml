@@ -4,7 +4,6 @@ services:
     image: postgres
     restart: always
     environment:
-      POSTGRES_DB: odoo
       POSTGRES_USER: odoo
     ports:
      - "5432:5432"
@@ -18,7 +17,7 @@ services:
     - "postgres"
     restart: always
     environment:
-      HASURA_GRAPHQL_DATABASE_URL: postgres://odoo:@postgres:5432/odoo
+      HASURA_GRAPHQL_DATABASE_URL: postgres://odoo:@postgres:5432/postgres
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true" 
       ## uncomment next line to set an admin secret
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
